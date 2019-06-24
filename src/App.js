@@ -1,9 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {count, length} from './number';
 
-const numb = 2;
-const flag = true;
 
 function App() {
   return (
@@ -17,14 +16,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <p>
-          {numb},
-          {flag&& ' TRUE '},
-          {numb +2},
-          {flag ? 'YES' : 'NO'}
-          {undefined}
-          {null}
-          {false}
-          {true}
+          count * length = {count * length};
         </p>
         <a
           className="App-link"
