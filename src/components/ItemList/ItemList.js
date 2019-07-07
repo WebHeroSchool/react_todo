@@ -12,9 +12,10 @@ const ItemList = ({task}) => (<ul className={styles.list}>
         }}
       /><Item taskText={item.text} taskDone={item.isDone}/>
       <Checkbox
-        value="checkedA"
+        value="checkedF"
+        indeterminate
         inputProps={{
-          'aria-label': 'primary checkbox',
+          'aria-label': 'indeterminate checkbox',
         }}
       />
         </li>

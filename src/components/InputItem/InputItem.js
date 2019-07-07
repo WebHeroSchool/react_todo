@@ -4,6 +4,7 @@ import styles from './InputItem.module.css';
 
 const InputItem = () => (<div className ={styles.textField}> 
   <TextField 
+      className={styles.innerText}
       id="standard-with-placeholder"
       label="Добавить новое задание"
       placeholder="Задание"
