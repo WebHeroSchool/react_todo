@@ -25,13 +25,16 @@ class App extends React.Component {
             }
         ]
     }
+
+    onClickDone = isDone => console.log(isDone);
+
     render() {
         let doTasks = this.state.tasks.filter(item => item.isDone === false);
     
         return (<div className={styles.wrap}>
             <h1 className={styles.title}>Важные Дела:</h1>
             <InputItem />
-            <ItemList task={this.state.tasks}/>
+            <ItemList task={this.state.tasks} onClickDone={this.onClickDone}/>
             <Footer count ={doTasks.length}/>
         </div>
         )

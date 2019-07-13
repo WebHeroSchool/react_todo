@@ -3,10 +3,11 @@ import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const ItemList = ({task}) => (<ul className={styles.list}>
+const ItemList = ({task, onClickDone}) => (<ul className={styles.list}>
     {task.map(item => (
         <li className={styles.listItem}><Checkbox
         value="checkedA"
+        onClick= {() => onClickDone(item.isDone)}
         inputProps={{
           'aria-label': 'primary checkbox',
         }}
