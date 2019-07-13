@@ -5,8 +5,8 @@ import styles from './App.module.css';
 import InputItem from '../InputItem/InputItem';
 
 class App extends React.Component {
-    render() {
-        const tasks = [
+    state = {
+        tasks: [
             {
                 text: 'Повысить мотивацию',
                 isDone: true
@@ -23,14 +23,15 @@ class App extends React.Component {
                 text: 'Играть',
                 isDone: false
             }
-        ];
-    
-        let doTasks = tasks.filter(item => item.isDone === false);
+        ]
+    }
+    render() {
+        let doTasks = this.state.tasks.filter(item => item.isDone === false);
     
         return (<div className={styles.wrap}>
             <h1 className={styles.title}>Важные Дела:</h1>
             <InputItem />
-            <ItemList task={tasks}/>
+            <ItemList task={this.state.tasks}/>
             <Footer count ={doTasks.length}/>
         </div>
         )
