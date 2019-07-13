@@ -1,3 +1,8 @@
+.listItem{
+    display: flex;
+    justify-content: space-between;
+}
+
 .text{
     color: #33A4FF;
     padding: 10px;
