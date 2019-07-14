@@ -1,7 +1,9 @@
-.Item {
-  color: #333;
-}
+.text{
+    color: #33A4FF;
+    padding: 10px;
+   }
 
-.done{
-  color: #c4c4c4;
+.done {
+    color: #f50057;
+    text-decoration: line-through;
 }

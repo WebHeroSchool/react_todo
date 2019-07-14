@@ -1,6 +1,8 @@
 import React from 'react';
+import styles from './Footer.module.css';
 
-const Footer = ({count}) => (<div>
-  Осталось выполнить вот столько дел: {count} </div>);
+const Footer = ({count}) =>  (<footer className={styles.lastTasks}>
+    Осталось дел: {count}
+</footer>)
 
 export default Footer;
