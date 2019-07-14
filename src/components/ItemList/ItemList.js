@@ -7,6 +7,7 @@ const ItemList = ({task, onClickDone}) => (<ul className={styles.list}>
     {task.map(item => (
         <li className={styles.listItem}><Checkbox
         value="checkedA"
+        checked={item.isDone}
         onClick= {() => onClickDone(item.isDone)}
         inputProps={{
           'aria-label': 'primary checkbox',
