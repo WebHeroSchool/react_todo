@@ -3,12 +3,12 @@ import styles from './Item.module.css';
 import classnames from 'classnames';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const Item = ({taskText, taskDone, taskId, onClickDone}) => (
+const Item = ({taskText, taskDone, taskId, onClickDone, onClickDelete}) => (
     <div className={styles.listItem}>
     <Checkbox
         value="checkedA"
         checked={taskDone}
-        onClick= {() => onClickDone(taskId)}
+        onClick={() => onClickDone(taskId)}
         inputProps={{
           'aria-label': 'primary checkbox',
         }}
@@ -23,6 +23,8 @@ const Item = ({taskText, taskDone, taskId, onClickDone}) => (
 <Checkbox
         value="checkedF"
         indeterminate
+        checked={taskDone}
+        onClick={() => onClickDelete(taskId)}
         inputProps={{
           'aria-label': 'indeterminate checkbox',
         }}
