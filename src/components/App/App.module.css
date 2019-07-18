@@ -1,6 +1,10 @@
+.container{
+    display: flex;
+}
+
 .wrap {
     margin: auto;
-    width: 300px;
+    min-width: 300px;
     background-color: rgba(233, 233, 233, 0.384);
     border: 3px solid rgb(32, 176, 243);
     border-radius: 30px;
@@ -12,4 +16,5 @@
     text-align: center;
     margin-top: 15px;
     margin-bottom: 0;
+    color: #303f9f;
 }

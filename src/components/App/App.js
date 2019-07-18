@@ -3,7 +3,6 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 import InputItem from '../InputItem/InputItem';
-import { array } from 'prop-types';
 
 class App extends React.Component {
     state = {
@@ -12,23 +11,9 @@ class App extends React.Component {
                 text: 'Повысить мотивацию',
                 isDone: true,
                 id: 1
-            },
-            {
-                text: 'Сделать задачу',
-                isDone: false,
-                id: 2
-            },
-            {
-                text: 'Отдохнуть',
-                isDone: true,
-                id: 3
-            },
-            {
-                text: 'Играть',
-                isDone: false,
-                id: 4
             }
-        ]
+        ],
+        count:1
     }
 
     onClickDone = id => {
@@ -53,14 +38,29 @@ class App extends React.Component {
         this.setState({tasks: newItemList});
     }
 
+    onClickAdd = text => this.setState(state => ({
+        tasks:[
+            ...state.tasks,
+
+            {
+                text,
+                isDone: false,
+                id: state.count + 1
+            }
+        ],
+        count: state.count + 1
+    }))
+
     render() {
         let doTasks = this.state.tasks.filter(item => item.isDone === false);
     
-        return (<div className={styles.wrap}>
+        return (<div className={styles.container}>
+            <div className={styles.wrap}>
             <h1 className={styles.title}>Важные Дела:</h1>
-            <InputItem />
+            <InputItem onClickAdd={this.onClickAdd}/>
             <ItemList task={this.state.tasks} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete}/>
             <Footer count ={doTasks.length}/>
+        </div>
         </div>
         )
     }
