@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import styles from './InputItem.module.css';
+import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 
 class InputItem extends React.Component {
@@ -16,7 +17,6 @@ class InputItem extends React.Component {
             this.props.onClickAdd(this.state.inputTextValue);
         } else {
             this.setState({helperText: 'Ошибка! Пустое поле!', error: true})
-            console.log('Ошибка!!');
         }
     }
 
@@ -44,6 +44,8 @@ class InputItem extends React.Component {
     }
 }
 
-
+InputItem.propTypes = {
+    onClickAdd: PropTypes.func.isRequired
+}
 
 export default InputItem;

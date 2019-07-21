@@ -53,14 +53,15 @@ class App extends React.Component {
 
     render() {
         let doTasks = this.state.tasks.filter(item => item.isDone === false);
-    
+        let doTasksNumber = doTasks.length;
+
         return (<div className={styles.container}>
             <div className={styles.wrap}>
-            <h1 className={styles.title}>Важные Дела:</h1>
-            <InputItem onClickAdd={this.onClickAdd}/>
-            <ItemList task={this.state.tasks} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete}/>
-            <Footer count ={doTasks.length}/>
-        </div>
+                <h1 className={styles.title}>Важные Дела:</h1>
+                <InputItem onClickAdd={this.onClickAdd}/>
+                <ItemList task={this.state.tasks} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete}/>
+                <Footer count ={doTasksNumber}/>
+            </div>
         </div>
         )
     }
