@@ -31,4 +31,8 @@ const Item = ({taskText, taskDone, taskId, onClickDone, onClickDelete}) => (
       />
 </div>)
 
+Item.defaultProps = {
+    taskDone: false
+}
+
 export default Item;
