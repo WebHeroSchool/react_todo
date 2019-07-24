@@ -11,9 +11,19 @@ class App extends React.Component {
                 text: 'Повысить мотивацию',
                 isDone: true,
                 id: 1
+            },
+            {
+                text: 'adasdasd',
+                isDone: false,
+                id: 2
+            },
+            {
+                text: 'Повысить мотивацию',
+                isDone: false,
+                id: 3
             }
         ],
-        count:1
+        count: 3
     }
 
     onClickDone = id => {
