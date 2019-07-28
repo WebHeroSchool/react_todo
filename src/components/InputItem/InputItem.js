@@ -1,51 +1,64 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
 import styles from './InputItem.module.css';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
 
 class InputItem extends React.Component {
+
     state = {
-      inputTextValue: ''
+        inputTextValue: '',
+        error:''
     };
 
     onButtonClick = () => {
         if (this.state.inputTextValue !== ''){
             this.setState({
-                inputTextValue: ''
+                inputTextValue: '',
+                error:''
             });
             this.props.onClickAdd(this.state.inputTextValue);
         } else {
-            this.setState({helperText: 'Ошибка! Пустое поле!', error: true})
+            this.setState({
+                error: 'Ошибка! Пустое поле!'
+            });
         }
     }
 
+    
     render() {
-
-        return (<div className ={styles.textField}> 
-        <TextField 
-            id="standard-with-placeholder"
-            label="Добавить новое задание"
-            placeholder="Задание"
-            margin="normal"
-            value={this.state.inputTextValue}
-            helperText={this.state.helperText}
-            error={this.state.error}
-            onChange={event => this.setState({inputTextValue: event.target.value.toUpperCase(), error: false, helperText: ''})}
-        />
-        <Button 
+        
+        return (<div className={styles.box}>
+            <div className={styles.form}>
+                <input
+                    className={styles.inputItem}
+                    name="name"
+                    type="text"
+                    value={this.state.inputTextValue}
+                    onChange={event => this.setState({inputTextValue: event.target.value.toUpperCase()})}
+                    placeholder=""
+                    required
+                />
+                <label
+                    htmlFor="name"
+                    className={styles.labelName}>
+                    <span className={styles.contentName}>Добавить задание</span>
+                </label>
+                
+            </div>
+            <p className={styles.errorInput}>{this.state.error}</p>
+            <input
                 className={styles.button}
-                color="secondary"
-                variant="contained"
-                onClick={this.onButtonClick}>
-                Добавить
-            </Button>
-        </div>)
+                type="submit"
+                value="Добавить"
+                onClick={this.onButtonClick}
+            />
+        </div>
+        )
     }
 }
 
 InputItem.propTypes = {
     onClickAdd: PropTypes.func.isRequired
 }
+
 
 export default InputItem;

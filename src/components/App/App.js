@@ -1,29 +1,20 @@
 import React from 'react';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
 import styles from './App.module.css';
+import Footer from '../Footer/Footer';
+import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 
 class App extends React.Component {
     state = {
         tasks: [
             {
-                text: 'Повысить мотивацию',
+                text: 'Сделать дизайн чекбоксов и InputItem',
                 isDone: true,
                 id: 1
-            },
-            {
-                text: 'adasdasd',
-                isDone: false,
-                id: 2
-            },
-            {
-                text: 'Повысить мотивацию',
-                isDone: false,
-                id: 3
+               
             }
         ],
-        count: 3
+        count: 2
     }
 
     onClickDone = id => {
@@ -61,20 +52,23 @@ class App extends React.Component {
         count: state.count + 1
     }))
 
-    render() {
-        let doTasks = this.state.tasks.filter(item => item.isDone === false);
-        let doTasksNumber = doTasks.length;
 
-        return (<div className={styles.container}>
-            <div className={styles.wrap}>
-                <h1 className={styles.title}>Важные Дела:</h1>
+    render(){
+        let taksDone = this.state.tasks.filter(item => item.isDone === false );
+        let taksDoneLength = taksDone.length;
+
+        return (<div className={styles.main}>
+            <div className={styles.container}>
+                <header className={styles.title}>Важные дела</header>
                 <InputItem onClickAdd={this.onClickAdd}/>
                 <ItemList task={this.state.tasks} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete}/>
-                <Footer count ={doTasksNumber}/>
+                <Footer count={taksDoneLength}/>
             </div>
         </div>
         )
     }
 }
+
+
 
 export default App;

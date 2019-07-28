@@ -1,19 +1,21 @@
 import React from 'react';
+import styles from './ItemList.module.css';
 import Item from '../Item/Item';
 import PropTypes from 'prop-types';
-import styles from './ItemList.module.css';
 
-const ItemList = ({task, onClickDone, onClickDelete}) => (<ul className={styles.list}>
-    {task.map(item => (
-        <li key={item.id}> <Item 
-        taskText={item.text}
-        taskDone={item.isDone}
-        onClickDelete={onClickDelete}
-        onClickDone={onClickDone}
-        taskId ={item.id}/>
+const ItemList = ({task, onClickDone, onClickDelete}) => (<div className={styles.container}><ul className={styles.itemList}>
+    {task.map(item =>(
+        <li key ={item.id}>
+            <Item 
+                taskText={item.text} 
+                taskDone={item.isDone}
+                taskId={item.id}
+                onClickDone={onClickDone}
+                onClickDelete={onClickDelete} />
         </li>
     ))}
-</ul>)
+</ul></div>
+);
 
 ItemList.propTypes = {
     task : PropTypes.array.isRequired,

@@ -1,14 +1,14 @@
-.listItem{
+.listBox {
     display: grid;
     grid-template-columns: 30px 1fr 30px;
 }
 
-.text{
-    color: #33A4FF;
-    padding: 10px;
-   }
-
 .done {
-    color: #f50057;
+    color: rgba(111, 9, 18, 0.81) !important;
     text-decoration: line-through;
+    text-decoration-color: black;
+}
+
+.text {
+    color:white;
 }
