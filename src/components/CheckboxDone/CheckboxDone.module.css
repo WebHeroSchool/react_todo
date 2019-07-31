@@ -3,6 +3,7 @@
 }
 
 .checkboxLabel {
+    cursor: pointer;
     padding-left: 20px;
 }
 
