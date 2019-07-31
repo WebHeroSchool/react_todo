@@ -6,10 +6,9 @@ body {
 }
 
 .main {
-    min-height: 92vh;
+    min-height: 93vh;
     display: flex;
-    
-     justify-content: center;
+    justify-content: center;
 }
 
 .container {
