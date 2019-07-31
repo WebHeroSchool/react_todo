@@ -1,0 +1,26 @@
+.checkboxInput[type="checkbox"] {
+    display: none;
+}
+
+.checkboxLabel {
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+.checkboxLabel::before {
+    content:"";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('./ChekboxDone_A.svg');
+    transition: all 0.3 ease;
+    vertical-align: middle;
+    margin: 0 20px 10px -20px;
+    transition: all .3s ease;
+}
+
+.checkboxInput[type="checkbox"]:checked + .checkboxLabel::before  {
+    transition: all .3s ease;
+    background: url('./ChekboxDone_C.svg');
+}
+
