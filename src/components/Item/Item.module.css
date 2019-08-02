@@ -3,12 +3,12 @@
     grid-template-columns: 30px 1fr 30px;
 }
 
-.done {
-    color: rgba(111, 9, 18, 0.81) !important;
-    text-decoration: line-through;
-    text-decoration-color: black;
-}
-
 .text {
     color:white;
+}
+
+.done {
+    color: rgba(111, 9, 18, 0.81);
+    text-decoration: line-through;
+    text-decoration-color: black;
 }
