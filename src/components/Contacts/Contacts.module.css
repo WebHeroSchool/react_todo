@@ -1,0 +1,25 @@
+.wrap {
+    min-height: 93vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: table;
+    margin-top: 30px;
+    min-width: 500px;
+    min-height: 500px;
+    background: linear-gradient(179.96deg, #B36ABF 0.04%,
+     rgba(115, 180, 93, 0.8) 99.96%);
+    border-radius: 5px;
+}
+
+.title {
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 30px;
+}

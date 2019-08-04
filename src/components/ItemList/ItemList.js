@@ -1,25 +1,26 @@
 import React from 'react';
-import Item from '../Item/Item';
 import styles from './ItemList.module.css';
-import Checkbox from '@material-ui/core/Checkbox';
+import Item from '../Item/Item';
+import PropTypes from 'prop-types';
 
-const ItemList = ({task}) => (<ul className={styles.list}>
-    {task.map(item => (
-        <li className={styles.listItem}><Checkbox
-        value="checkedA"
-        inputProps={{
-          'aria-label': 'primary checkbox',
-        }}
-      /><Item taskText={item.text} taskDone={item.isDone}/>
-      <Checkbox
-        value="checkedF"
-        indeterminate
-        inputProps={{
-          'aria-label': 'indeterminate checkbox',
-        }}
-      />
+const ItemList = ({task, onClickDone, onClickDelete}) => (<div className={styles.container}><ul className={styles.itemList}>
+    {task.map(item =>(
+        <li key ={item.id}>
+            <Item 
+                taskText={item.text} 
+                taskDone={item.isDone}
+                taskId={item.id}
+                onClickDone={onClickDone}
+                onClickDelete={onClickDelete} />
         </li>
     ))}
-</ul>)
+</ul></div>
+);
+
+ItemList.propTypes = {
+    task : PropTypes.array.isRequired,
+    onClickDone: PropTypes.func.isRequired,
+    onClickDelete: PropTypes.func.isRequired
+}
 
 export default ItemList;

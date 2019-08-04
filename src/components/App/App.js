@@ -1,41 +1,26 @@
 import React from 'react';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
 import styles from './App.module.css';
-import InputItem from '../InputItem/InputItem';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-class App extends React.Component {
-    state = {
-        tasks: [
-            {
-                text: 'Повысить мотивацию',
-                isDone: true
-            },
-            {
-                text: 'Сделать задачу',
-                isDone: false
-            },
-            {
-                text: 'Отдохнуть',
-                isDone: true
-            },
-            {
-                text: 'Играть',
-                isDone: false
-            }
-        ]
-    }
-    render() {
-        let doTasks = this.state.tasks.filter(item => item.isDone === false);
-    
-        return (<div className={styles.wrap}>
-            <h1 className={styles.title}>Важные Дела:</h1>
-            <InputItem />
-            <ItemList task={this.state.tasks}/>
-            <Footer count ={doTasks.length}/>
+import Todo from '../Todo/Todo';
+import Contacts from '../Contacts/Contacts';
+import About from '../About/About';
+
+
+const App = () =>
+(   <Router>
+        <div className={styles.wrap}>
+            <header className={styles.menuList}>
+                <Link className={styles.link} to='/'>Обо мне</Link>
+                <Link className={styles.link} to='/todo'>Дела</Link>
+                <Link className={styles.link} to='/contacts'>Контакты</Link>
+            </header>
         </div>
-        )
-    }
-}
+        <div>
+            <Route path='/' exact component={About} />
+            <Route path='/todo' component={Todo} />
+            <Route path='/contacts' component={Contacts} />
+        </div>
+    </Router>)
 
 export default App;

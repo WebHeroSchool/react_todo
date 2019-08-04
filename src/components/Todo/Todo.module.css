@@ -1,0 +1,31 @@
+body {
+    margin: 0 0;
+    background: linear-gradient(180deg, rgba(240, 138, 19, 0.43) 0%,
+     #c1726f 100%);
+     background-repeat: no-repeat;
+}
+
+.main {
+    min-height: 93vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: table;
+    margin-top: 30px;
+    min-width: 500px;
+    background: linear-gradient(180deg, rgba(240, 53, 120, 0.83) 0%,
+     rgba(229, 254, 78, 0.5) 126.88%);
+    border-radius: 5px;
+}
+
+.title {
+    margin-top: 20px;
+    color:white;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 30px;
+}
