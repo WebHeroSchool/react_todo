@@ -41,11 +41,18 @@ class About extends React.Component {
                 {isLoading ? <div className={styles.preloader}/> :
                     <div className={styles.innerContainer}>
                         <div className={styles.login}>
-                            {user}</div><img className={styles.avatar} src={avatar} alt=''/>
+                            {user}</div><img className={styles.avatar} src={avatar} alt='Загрузка аватарки не удалась'/>
                     </div>}
-                {(fetchResponse && !isLoading && <ol className={styles.list}>
-                    {repoList.map(repo => (<li key={repo.id}><a className={styles.item} href={repo.html_url}>{repo.name}</a></li>))}
-                </ol>) || <div className={styles.error}>{fetchError}</div> }
+                {(fetchResponse &&
+                    <div>
+                        <h2 className={styles.subtitle}>Мои репозитории:</h2>
+                        <ol className={styles.list}>
+                            {repoList.map(repo =>
+                                (<li key={repo.id}>
+                                    <a className={styles.item} href={repo.html_url}>{repo.name}</a>
+                                </li>))}
+                        </ol>
+                    </div>) || <div className={styles.error}>{fetchError}</div> }
             </div>
         </div>)
     }
