@@ -1,11 +1,12 @@
 .wrap {
-    min-height: 92vh;
+    min-height: 93vh;
     display: flex;
     justify-content: center;
 }
 
 .container {
-    display: table;
+    display: grid;
+    grid-template-rows: 200px 1fr;
     margin-top: 30px;
     min-width: 500px;
     min-height: 500px;
@@ -22,4 +23,51 @@
     font-size: 36px;
     line-height: 42px;
     margin-bottom: 30px;
+}
+
+.preloader {
+    background: url('./Spinner.svg');
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    justify-self: center;
+}
+
+.error {
+    text-align: center;
+    font-size: 2rem;
+    color: #296497;
+}
+
+.list {
+    font-size: 18px;
+    color: #cdfef0;
+    justify-self: start;
+}
+
+
+.item {
+    color: #cdfef0;
+    text-decoration: none;
+}
+
+.item:hover{
+    text-decoration: underline;
+}
+
+.innerContainer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: 40px 120px;
+    justify-content: center;
+}
+
+.login {
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
 }

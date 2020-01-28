@@ -8,14 +8,14 @@ class Todo extends React.Component {
     state = {
         tasks: [
             {
-                text: 'Сделать дизайн чекбоксов и InputItem',
+                text: 'Сделать что-то',
                 isDone: true,
                 id: 1
                
             }
         ],
         count: 2
-    }
+    };
 
     onClickDone = id => {
         const newItemList = this.state.tasks.map(item => {
@@ -50,19 +50,19 @@ class Todo extends React.Component {
             }
         ],
         count: state.count + 1
-    }))
+    }));
 
 
     render(){
-        let taksDone = this.state.tasks.filter(item => item.isDone === false );
-        let taksDoneLength = taksDone.length;
+        let tasksDone = this.state.tasks.filter(item => item.isDone === false );
+        let tasksDoneLength = tasksDone.length;
 
         return (<div className={styles.main}>
             <div className={styles.container}>
                 <header className={styles.title}>Важные дела</header>
                 <InputItem onClickAdd={this.onClickAdd}/>
                 <ItemList task={this.state.tasks} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete}/>
-                <Footer count={taksDoneLength}/>
+                <Footer count={tasksDoneLength}/>
             </div>
         </div>
         )
