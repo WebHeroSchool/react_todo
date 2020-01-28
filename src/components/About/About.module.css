@@ -65,4 +65,8 @@
 .avatar {
     width: 120px;
     height: 120px;
+    font-family: sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 30px;
 }
