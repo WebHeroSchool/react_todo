@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 class Item extends React.Component {
 
     render(){
-        const {taskText, taskDone, taskId, onClickDone, onClickDelete} = this.props
+        const {taskText, taskDone, taskId, onClickDone, onClickDelete} = this.props;
 
         return (<div className={styles.listBox}>
             <CheckboxDone 

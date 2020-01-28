@@ -10,17 +10,17 @@ class InputItem extends React.Component {
     };
 
     onButtonClick = () => {
-        if (this.state.inputTextValue !== ''){
+        if (this.state.inputTextValue.trim() !== '') {
             this.setState({
                 inputTextValue: '',
                 error:''
             });
             this.props.onClickAdd(this.state.inputTextValue);
-        } else {
-            this.setState({
-                error: 'Ошибка! Пустое поле!'
-            });
-        }
+            } else {
+                this.setState({
+                    error: 'Ошибка! Пустое поле!'
+                });
+            }
     }
 
     
