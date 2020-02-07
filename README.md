@@ -14,7 +14,9 @@ There are 2 pages in my application:<br>
 2.ToDo<br>
 
 Click on About and you will find information about me.<br>
-If you click on ToDo you can add, edit and delete tasks
+If you click on ToDo you can add, edit and delete tasks<br><br>
+#####Edit mode
+In To Do, when you click on the pencil, the editing mode will be turned on.  Press Enter or click 2 times on the text to edit it. if you click on the parchment, you will exit the editing mode.
 
 ## How to work with this project
 
