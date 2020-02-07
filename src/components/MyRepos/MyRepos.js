@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './MyRepos.module.css';
+import PropTypes from 'prop-types';
 
 const MyRepos = ({repoList}) =>
     (<div className={styles.listContainer}>
@@ -31,5 +32,9 @@ const MyRepos = ({repoList}) =>
             )}
         </ul>
     </div>);
+
+MyRepos.propTypes = {
+    repoList: PropTypes.array.isRequired
+};
 
 export default MyRepos;

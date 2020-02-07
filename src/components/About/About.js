@@ -5,6 +5,7 @@ import UserInfo from '../UserInfo/UserInfo';
 import MyRepos from '../MyRepos/MyRepos';
 
 const octokit = new Octokit();
+
 class About extends React.Component {
     state = {
         isLoading: true,
@@ -13,54 +14,52 @@ class About extends React.Component {
     };
 
     componentDidMount() {
-        octokit.repos.listForUser( {
+        octokit.repos.listForUser({
             username: '1Amdro',
             type: 'all'
         }).then(({data}) => {
-            console.log(data);
             this.setState({
                 repoList: data,
                 isLoading: false,
                 fetchResponse: true,
             });
         }).catch(({error}) => {
-            this.setState( {
+            this.setState({
                 reposList: error,
                 isLoading: false,
                 fetchResponse: false
             })
         });
-            octokit.users.getByUsername({
+        octokit.users.getByUsername({
                 username: '1Amdro'
-                }
-            ).then(({data}) => {
-                this.setState({
-                    avatar: data.avatar_url,
-                    user: data.login,
-                    bio: data.bio
-                })
+            }
+        ).then(({data}) => {
+            this.setState({
+                avatar: data.avatar_url,
+                user: data.login,
+                bio: data.bio
             })
+        })
     }
 
     render() {
-        const {isLoading, repoList, fetchResponse, avatar, user, bio, language} = this.state;
-        console.log(language);
+        const {isLoading, repoList, fetchResponse, avatar, user, bio} = this.state;
         return (<div className={styles.wrap}>
             <div className={styles.container}>
                 {isLoading ? <div className={styles.preloader}/>
-                :
+                    :
                     <UserInfo fetchResponse={fetchResponse}
                               user={user}
                               bio={bio}
                               avatar={avatar}/>}
-                {isLoading?<div className={styles.preloader}/>:
-                    fetchResponse?
-                    <section>
-                        <h2 className={styles.subtitle}>Репозитории на github.com</h2>
-                        <MyRepos repoList={repoList}/>
-                    </section>
-                    :
-                    <div className={styles.error}><img/></div> }
+                {isLoading ? <div className={styles.preloader}/> :
+                    fetchResponse ?
+                        <section>
+                            <h2 className={styles.subtitle}>Репозитории на github.com</h2>
+                            <MyRepos repoList={repoList}/>
+                        </section>
+                        :
+                        <div className={styles.error}><img/></div>}
             </div>
         </div>)
     }
