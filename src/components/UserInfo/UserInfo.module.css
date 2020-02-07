@@ -1,0 +1,87 @@
+.innerContainer {
+    border: double 3px transparent;
+    background: linear-gradient(#6360EE, rgba(194, 28, 88, 0.9403) 100%),
+    linear-gradient(180deg, #5b527ce0 0%, rgba(176, 38, 127, 0.85) 100%);
+    border-radius: 7px;
+    display: grid;
+    grid-template-columns: 0.6fr 0.8fr 0.5fr;
+    box-shadow: 1px 0 20px 0 rgba(247, 243, 248, 0.66);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.avatar {
+    align-self: center;
+    width: 158px;
+    height: 169px;
+    border-radius: 5px;
+    justify-self: end;
+}
+
+.info {
+    font-size: 17px;
+    color: #cdd1e3;
+    justify-self: center;
+}
+
+.user {
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+.miniContainer {
+    display: flex;
+    align-items: center;
+}
+
+.email_icon {
+    background: url('../Images/email_icon.svg');
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background-size: cover;
+}
+
+.number_icon {
+    background: url('../Images/number_icon.svg') no-repeat;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    background-size: contain;
+}
+
+.links {
+    list-style: none;
+    align-self: end;
+    justify-self: flex-end;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.links > a {
+    margin: 0 5px;
+}
+
+.github_link {
+    background: url('../Images/github_icon.svg');
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.github_link:hover {
+    background: url('../Images/github_icon_hover.svg');
+    background-size: cover;
+}
+
+.vk_link {
+    background: url('../Images/vk_icon.svg');
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.vk_link:hover {
+    background: url('../Images/vk_icon_hover.svg');
+    background-size: cover;
+}

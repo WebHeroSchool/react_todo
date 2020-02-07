@@ -1,6 +1,17 @@
 .listBox {
     display: grid;
-    grid-template-columns: 30px 1fr 30px;
+    grid-template-columns: 30px 1fr 30px 30px;
+    grid-gap: 10px;
+    justify-content: center;
+    border: 2px solid #e809090a;
+    border-radius: 5px;
+    padding: 10px 10px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.listBox:hover {
+    border-color: #c1726f;
 }
 
 .text {
@@ -11,4 +22,34 @@
     color: rgba(111, 9, 18, 0.81);
     text-decoration: line-through;
     text-decoration-color: black;
+}
+
+.editorForm {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.editorInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: #FCFF6B;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.editorInput:visited{
+    color: #cdfef0;
+    border:  2px solid #ff241c;
+}
+
+.editorButton {
+    position: absolute;
+}
+
+.error {
+    color: rgba(206, 243, 106, 0.993);
+    transform: translateY(20px);
 }

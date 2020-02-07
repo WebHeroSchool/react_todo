@@ -1,0 +1,44 @@
+.filter {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.filterInput[type='radio'] {
+    display: none;
+
+}
+
+.inputLabel {
+    cursor: pointer;
+    border: 2px solid #d3232300;
+    border-radius: 5px;
+    padding: 3px 3px 3px 3px;
+    width: auto;
+    background-color: #d6acac5e;
+    color: #ca480ac4;
+    transition: transform 0.2s ease-in-out;
+}
+
+.inputLabel:hover {
+    color: #cdfef0;
+}
+
+.filterInput[type='radio']:checked + .inputLabel {
+    border: 2px solid #e98b4d52;
+    border-radius: 5px;
+    padding: 3px 3px 3px 3px;
+    background-color: rgba(255, 193, 35, 0.33);
+    transform: translateY(5px);
+    color: #fdeaeb;
+}
+
+.add_task {
+    background-image: url('../Images/todo_error.svg');
+    width: 350px;
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 20px auto;
+
+}

@@ -4,17 +4,11 @@
 
 .checkboxLabel {
     cursor: pointer;
-
-}
-
-.checkboxLabel::before {
-    content:"";
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url('./ChekboxRemove.svg');
+    background: url('../Images/ChekboxRemove.svg');
     vertical-align: middle;
-    margin-left: 5px;
 }
 
 

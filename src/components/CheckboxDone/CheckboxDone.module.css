@@ -6,19 +6,18 @@
     cursor: pointer;
 }
 
-.checkboxLabel::before {
+.checkboxLabel {
     content: "";
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url('./ChekboxDone_A.svg');
+    background: url('../Images/ChekboxDone_A.svg');
     vertical-align: middle;
-    margin-bottom: 10px;
     transition: all .3s ease;
 }
 
-.checkboxInput[type="checkbox"]:checked + .checkboxLabel::before  {
+.checkboxInput[type="checkbox"]:checked + .checkboxLabel  {
     transition: all .3s ease;
-    background: url('./ChekboxDone_C.svg');
+    background: url('../Images/ChekboxDone_C.svg');
 }
 

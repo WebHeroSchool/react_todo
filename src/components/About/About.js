@@ -1,58 +1,66 @@
 import React from 'react';
 import styles from './About.module.css';
-import Octokit from "@octokit/rest";
+import Octokit from '@octokit/rest';
+import UserInfo from '../UserInfo/UserInfo';
+import MyRepos from '../MyRepos/MyRepos';
 
 const octokit = new Octokit();
 class About extends React.Component {
     state = {
         isLoading: true,
         repoList: [],
-        fetchResponse: true,
-        fetchError: '',
+        fetchResponse: true
     };
 
     componentDidMount() {
         octokit.repos.listForUser( {
             username: '1Amdro',
-        type: "all"
+            type: 'all'
         }).then(({data}) => {
+            console.log(data);
             this.setState({
                 repoList: data,
                 isLoading: false,
-                avatar: data[0].owner.avatar_url,
-                user : data[0].owner.login,
-                fetchResponse: true
+                fetchResponse: true,
             });
-            console.log(data[0].owner.avatar_url)
         }).catch(({error}) => {
             this.setState( {
                 reposList: error,
                 isLoading: false,
-                fetchResponse: false,
-                fetchError: 'Ошибка! Попробуйте еще раз!'
+                fetchResponse: false
             })
-        })
+        });
+            octokit.users.getByUsername({
+                username: '1Amdro'
+                }
+            ).then(({data}) => {
+                this.setState({
+                    avatar: data.avatar_url,
+                    user: data.login,
+                    bio: data.bio
+                })
+            })
     }
 
     render() {
-        const {isLoading, repoList, fetchError, fetchResponse, avatar, user} = this.state;
+        const {isLoading, repoList, fetchResponse, avatar, user, bio, language} = this.state;
+        console.log(language);
         return (<div className={styles.wrap}>
             <div className={styles.container}>
-                {isLoading ? <div className={styles.preloader}/> :
-                    <div className={styles.innerContainer}>
-                        <div className={styles.login}>
-                            {user}</div><img className={styles.avatar} src={avatar} alt='Загрузка аватарки не удалась'/>
-                    </div>}
-                {(fetchResponse &&
-                    <div>
-                        <h2 className={styles.subtitle}>Мои репозитории:</h2>
-                        <ol className={styles.list}>
-                            {repoList.map(repo =>
-                                (<li key={repo.id}>
-                                    <a className={styles.item} href={repo.html_url}>{repo.name}</a>
-                                </li>))}
-                        </ol>
-                    </div>) || <div className={styles.error}>{fetchError}</div> }
+                {isLoading ? <div className={styles.preloader}/>
+                :
+                    <UserInfo fetchResponse={fetchResponse}
+                              user={user}
+                              bio={bio}
+                              avatar={avatar}/>}
+                {isLoading?<div className={styles.preloader}/>:
+                    fetchResponse?
+                    <section>
+                        <h2 className={styles.subtitle}>Репозитории на github.com</h2>
+                        <MyRepos repoList={repoList}/>
+                    </section>
+                    :
+                    <div className={styles.error}><img/></div> }
             </div>
         </div>)
     }

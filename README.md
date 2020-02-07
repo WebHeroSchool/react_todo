@@ -1,6 +1,22 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project introduction
+
+Hello!
+
+I am very pleased to present my React project<br>
+The project was created as a final assignment in an online school: [Web Hero School](https://webheroschool.ru/) <br>
+
+I will be glad if you appreciate my project
+## Project information
+There are 2 pages in my application:<br>
+1.About<br>
+2.ToDo<br>
+
+Click on About and you will find information about me.<br>
+If you click on ToDo you can add, edit and delete tasks
+
+## How to work with this project
 
 In the project directory, you can run:
 

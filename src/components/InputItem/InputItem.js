@@ -10,22 +10,26 @@ class InputItem extends React.Component {
     };
 
     onButtonClick = () => {
-        if (this.state.inputTextValue.trim() !== '') {
+        if (!this.props.tasksText.includes(this.state.inputTextValue) &&(this.state.inputTextValue.trim() !== '')) {
             this.setState({
                 inputTextValue: '',
                 error:''
             });
             this.props.onClickAdd(this.state.inputTextValue);
-            } else {
-                this.setState({
-                    error: 'Ошибка! Пустое поле!'
-                });
             }
-    }
+        else if (this.props.tasksText.includes(this.state.inputTextValue)){
+            this.setState({
+                error: 'Ошибка! Это задание уже есть в списке!'
+            });
+        }
+        else {
+            this.setState({
+                error: 'Ошибка! Пустое поле!'
+            })
+        }
+    };
 
-    
     render() {
-        
         return (<div className={styles.box}>
             <div className={styles.form}>
                 <input
@@ -34,7 +38,7 @@ class InputItem extends React.Component {
                     type="text"
                     value={this.state.inputTextValue}
                     onChange={event => this.setState({inputTextValue: event.target.value.toUpperCase()})}
-                    placeholder=""
+                    autoComplete='off'
                     required
                 />
                 <label
@@ -42,7 +46,6 @@ class InputItem extends React.Component {
                     className={styles.labelName}>
                     <span className={styles.contentName}>Добавить задание</span>
                 </label>
-                
             </div>
             <p className={styles.errorInput}>{this.state.error}</p>
             <input
@@ -51,14 +54,12 @@ class InputItem extends React.Component {
                 value="Добавить"
                 onClick={this.onButtonClick}
             />
-        </div>
-        )
+        </div>)
     }
 }
 
 InputItem.propTypes = {
     onClickAdd: PropTypes.func.isRequired
-}
-
+};
 
 export default InputItem;
