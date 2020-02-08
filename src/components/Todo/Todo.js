@@ -104,7 +104,6 @@ class Todo extends React.Component {
                         enableEditor: this.enableEditor}}>
                         <ItemListFilter tasks={this.state.tasks}/>
                     </DataContext.Provider>
-
                 </div>
             </div>
         )
