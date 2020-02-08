@@ -93,7 +93,8 @@
     width: 15px;
     height: 15px;
     background-image: url('../../Images/star_icon.svg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .branch_icon {
@@ -101,7 +102,8 @@
     width: 12px;
     height: 12px;
     background-image: url('../../Images/branch_icon.svg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 610px) {

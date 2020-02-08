@@ -50,11 +50,10 @@
 }
 
 .whs_icon{
-    background: url('../../Images/whs.svg');
     width: 75px;
     height: 35px;
+    background: url('../../Images/whs.svg') no-repeat;
     background-size: contain;
-    background-repeat: no-repeat;
     justify-self: end;
     color: #e5f372;
     margin: 0;
@@ -77,29 +76,31 @@
 }
 
 .github_link {
-    background: url('../../Images/github_icon.svg');
+    background: url('../../Images/github_icon.svg') no-repeat;
     align-self: flex-start;
     width: 30px;
     height: 30px;
-    background-size: cover;
+    background-size: contain;
 }
 
 .github_link:hover {
-    background: url('../../Images/github_icon_hover.svg');
-    background-size: cover;
+    width: 30px;
+    height: 30px;
+    background: url('../../Images/github_icon_hover.svg') no-repeat;
+    background-size: contain;
 }
 
 .vk_link {
-    background: url('../../Images/vk_icon.svg');
+    background: url('../../Images/vk_icon.svg') no-repeat;
     align-self: flex-start;
     width: 30px;
     height: 30px;
-    background-size: cover;
+    background-size: contain;
 }
 
 .vk_link:hover {
     background: url('../../Images/vk_icon_hover.svg');
-    background-size: cover;
+    background-size: contain;
 }
 
 @media screen and (max-width: 610px) {
@@ -115,9 +116,11 @@
 
     .links {
         justify-content: center;
+        grid-gap: 15px;
     }
 
     .whs_icon {
         align-self: end;
+        grid-row: 2;
     }
 }
