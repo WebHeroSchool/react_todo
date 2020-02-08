@@ -45,7 +45,7 @@ class Item extends React.Component {
                                value={this.state.currentText}
                                autoComplete='off'
                                onKeyDown={(event) => this.onKeyPress(event, taskId, taskText, onClickChange)}
-                               onChange={event => this.setState({currentText: event.target.value.toUpperCase()})}
+                               onChange={event => this.setState({currentText: event.target.value.toUpperCase(), status: ''})}
                                onDoubleClick={() => this.onDoubleClickChange(taskId, tasksText, onClickChange)}
                                type='text'/>
                         <p className={styles.error}>{this.state.status}</p>

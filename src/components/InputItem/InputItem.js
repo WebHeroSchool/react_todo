@@ -37,7 +37,7 @@ class InputItem extends React.Component {
                     name="name"
                     type="text"
                     value={this.state.inputTextValue}
-                    onChange={event => this.setState({inputTextValue: event.target.value.toUpperCase()})}
+                    onChange={event => this.setState({inputTextValue: event.target.value.toUpperCase(), error: ''})}
                     autoComplete='off'
                     required
                 />

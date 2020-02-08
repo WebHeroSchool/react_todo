@@ -31,7 +31,6 @@ class Todo extends React.Component {
             tasks: JSON.parse(localStorage.getItem('tasks')),
             count: JSON.parse(localStorage.getItem('count'))
         });
-        localStorage.clear();
     }
 
     componentWillUpdate(nextProps, nextState) {

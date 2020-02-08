@@ -29,3 +29,12 @@ body {
     line-height: 42px;
     margin-bottom: 30px;
 }
+
+@media screen and (max-width: 610px) {
+    .container {
+        min-width: auto;
+    }
+    .title {
+        margin-bottom: 5px;
+    }
+}

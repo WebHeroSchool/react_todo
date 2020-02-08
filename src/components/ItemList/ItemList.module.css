@@ -28,3 +28,15 @@
 .itemList::-webkit-scrollbar-thumb {
     background: #feb9b4;
 }
+
+@media screen and (max-width: 610px) {
+    .container {
+        margin: 10px;
+    }
+
+    .itemList {
+        padding-inline-start: 0;
+        padding: 0;
+        width: auto;
+    }
+}

@@ -34,7 +34,7 @@
 }
 
 .add_task {
-    background-image: url('../Images/todo_error.svg');
+    background-image: url('../../Images/todo_error.svg');
     width: 350px;
     height: 250px;
     background-size: contain;

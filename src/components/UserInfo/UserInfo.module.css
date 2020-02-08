@@ -24,8 +24,7 @@
     justify-self: center;
 }
 
-.user {
-    font-size: 2rem;
+.name {
     color: #FFFFFF;
 }
 
@@ -35,7 +34,7 @@
 }
 
 .email_icon {
-    background: url('../Images/email_icon.svg');
+    background: url('../../Images/email_icon.svg');
     width: 30px;
     height: 30px;
     margin-right: 5px;
@@ -43,45 +42,82 @@
 }
 
 .number_icon {
-    background: url('../Images/number_icon.svg') no-repeat;
+    background: url('../../Images/number_icon.svg') no-repeat;
     width: 25px;
     height: 25px;
     margin-right: 5px;
     background-size: contain;
 }
 
-.links {
-    list-style: none;
-    align-self: end;
-    justify-self: flex-end;
-    display: flex;
-    margin-bottom: 5px;
+.whs_icon{
+    background: url('../../Images/whs.svg');
+    width: 75px;
+    height: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-self: end;
+    color: #e5f372;
+    margin: 0;
 }
 
-.links > a {
-    margin: 0 5px;
+.links_container {
+    display: grid;
+    grid-template-columns: 30px 30px 2px;
+    grid-column-gap: 5px;
+    grid-template-rows: min-content;
+    align-self: end;
+    justify-self: end;
+}
+
+.links {
+    list-style: none;
+    display: grid;
+   /* grid-template-columns: 0.6fr 0.2fr 0.2fr;*/
+    grid-template-rows: 0.6fr 0.4fr;
 }
 
 .github_link {
-    background: url('../Images/github_icon.svg');
+    background: url('../../Images/github_icon.svg');
+    align-self: flex-start;
     width: 30px;
     height: 30px;
     background-size: cover;
 }
 
 .github_link:hover {
-    background: url('../Images/github_icon_hover.svg');
+    background: url('../../Images/github_icon_hover.svg');
     background-size: cover;
 }
 
 .vk_link {
-    background: url('../Images/vk_icon.svg');
+    background: url('../../Images/vk_icon.svg');
+    align-self: flex-start;
     width: 30px;
     height: 30px;
     background-size: cover;
 }
 
 .vk_link:hover {
-    background: url('../Images/vk_icon_hover.svg');
+    background: url('../../Images/vk_icon_hover.svg');
     background-size: cover;
+}
+
+@media screen and (max-width: 610px) {
+    .innerContainer {
+        grid-template-columns: auto;
+        justify-content: center;
+        grid-template-rows: 0.4fr 0.4fr 0.4fr;
+    }
+
+    .avatar {
+        justify-self: center;
+    }
+
+    .links {
+        justify-content: center;
+    }
+
+    .whs_icon {
+        align-self: end;
+    }
 }

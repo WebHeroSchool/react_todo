@@ -14,7 +14,7 @@
 }
 
 .preloader {
-    background: url('../Images/Spinner.svg');
+    background: url('../../Images/Spinner.svg');
     width: 200px;
     height: 200px;
     background-size: cover;
@@ -32,3 +32,12 @@
     color: #cdfef0;
 }
 
+@media screen and (max-width: 610px) {
+    .container {
+        min-width: auto;
+    }
+
+    .subtitle {
+        margin: 10px;
+    }
+}
