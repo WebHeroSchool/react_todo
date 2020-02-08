@@ -61,6 +61,7 @@
 @media screen and (max-width: 610px) {
     .listBox {
         grid-template-columns: 0.1fr 0.5fr 0.1fr 0.1fr;
+        justify-content: space-around;
     }
 }
 
