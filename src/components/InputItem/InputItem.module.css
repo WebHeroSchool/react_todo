@@ -2,7 +2,6 @@
     display: grid;
     justify-content: center;
     grid-template-rows: 50px auto 70px;
-
 }
 
 .form {
@@ -57,14 +56,12 @@
     transform: translateY(-150%);
     font-size: 14px;
     color: #FCFF6B;
-    
 }
 
 .inputItem:focus + .labelName::after, 
 .inputItem:valid + .labelName::after {
     transform: translateX(0);
 }
-
 
 .button {
     justify-self: center;

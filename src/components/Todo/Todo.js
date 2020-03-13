@@ -33,10 +33,10 @@ class Todo extends React.Component {
         });
     }
 
-    componentWillUpdate(nextProps, nextState) {
-        localStorage.setItem('tasks', JSON.stringify(nextState.tasks));
-        localStorage.setItem('count', JSON.stringify(nextState.count));
-    }
+        componentWillUpdate(nextProps, nextState, nextContext) {
+            localStorage.setItem('tasks', JSON.stringify(nextState.tasks));
+            localStorage.setItem('count', JSON.stringify(nextState.count));
+        }
 
     onClickDone = id => this.setState(state => {
         const newItemList = state.tasks.map(item => {

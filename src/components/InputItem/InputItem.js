@@ -10,7 +10,7 @@ class InputItem extends React.Component {
     };
 
     onButtonClick = () => {
-        if (!this.props.tasksText.includes(this.state.inputTextValue) &&(this.state.inputTextValue.trim() !== '')) {
+        if (!this.props.tasksText.includes(this.state.inputTextValue.trim()) &&(this.state.inputTextValue.trim() !== '')) {
             this.setState({
                 inputTextValue: '',
                 error:''

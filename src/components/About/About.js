@@ -10,10 +10,13 @@ class About extends React.Component {
     state = {
         isLoading: true,
         repoList: [],
-        fetchResponse: true
+        fetchResponse: true,
+        isMounted: false
     };
 
     componentDidMount() {
+        this.setState({isMounted: true});
+
         octokit.repos.listForUser({
             username: '1Amdro',
             type: 'all'
@@ -40,6 +43,10 @@ class About extends React.Component {
                 bio: data.bio
             })
         })
+    }
+
+    componentWillUnmount() {
+        this.setState({isMounted: true});
     }
 
     render() {

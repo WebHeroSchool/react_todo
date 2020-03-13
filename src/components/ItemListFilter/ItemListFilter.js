@@ -67,7 +67,7 @@ class ItemListFilter extends React.Component {
                 (!filterDone && !filterUndone) ?
                     <ItemList task={tasks}/>
                     :
-                    (filterDone === true) ?
+                    (filterDone) ?
                         <ItemList task={tasks.filter(item => item.isDone === true)}/>
                         :
                         <ItemList task={tasks.filter(item => item.isDone === false)}/>

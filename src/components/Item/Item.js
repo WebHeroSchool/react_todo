@@ -14,11 +14,10 @@ class Item extends React.Component {
     };
 
     onDoubleClickChange = (id, taskText, onClickChange) => {
-        if (!taskText.includes(this.state.currentText) && (this.state.currentText.trim() !== '') &&
-            (!taskText.includes(this.state.currentText.trim()))) {
+        if (taskText !== this.state.currentText.trim() && this.state.currentText.trim() !== '') {
             this.setState({status: 'Отредактировано'});
             onClickChange(id, this.state.currentText)
-        } else if (taskText.includes(this.state.currentText)) {
+        } else if (taskText.includes(this.state.currentText.trim())) {
             this.setState({status: 'Ошибка! Это задание уже есть'})
         } else {
             this.setState({status: 'Ошибка!'})
