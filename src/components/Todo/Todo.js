@@ -28,7 +28,7 @@ const Todo = () => {
         localStorage.setItem('my-tasks', JSON.stringify(tasks))
         localStorage.setItem('my-counts', JSON.stringify(count))
         console.log('update')
-    })
+    }, [tasks, count])
 
     useLayoutEffect(() => {
         console.log('mount')
