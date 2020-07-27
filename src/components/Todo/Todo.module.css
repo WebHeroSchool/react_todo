@@ -14,7 +14,7 @@ body {
 .container {
     display: table;
     margin-top: 30px;
-    min-width: 500px;
+    min-width: 563px;
     background: linear-gradient(180deg, rgba(240, 53, 120, 0.83) 0%,
      rgba(229, 254, 78, 0.5) 126.88%);
     border-radius: 5px;
@@ -28,4 +28,13 @@ body {
     font-size: 36px;
     line-height: 42px;
     margin-bottom: 30px;
+}
+
+@media screen and (max-width: 610px) {
+    .container {
+        min-width: auto;
+    }
+    .title {
+        margin: 5px;
+    }
 }

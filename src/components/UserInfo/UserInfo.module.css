@@ -1,0 +1,126 @@
+.innerContainer {
+    border: double 3px transparent;
+    background: linear-gradient(#6e9ed5, rgba(28, 194, 94, 0.79) 100%),
+    linear-gradient(180deg, #c7c1dce0 0%, rgba(133, 192, 210, 0.85) 100%);
+    border-radius: 7px;
+    display: grid;
+    grid-template-columns: 0.6fr 0.8fr 0.5fr;
+    box-shadow: 1px 0 20px 0 rgba(247, 243, 248, 0.66);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.avatar {
+    align-self: center;
+    width: 158px;
+    height: 169px;
+    border-radius: 5px;
+    justify-self: end;
+}
+
+.info {
+    font-size: 17px;
+    color: #cdd1e3;
+    justify-self: center;
+}
+
+.name {
+    color: #FFFFFF;
+}
+
+.miniContainer {
+    display: flex;
+    align-items: center;
+}
+
+.email_icon {
+    background: url('../../Images/email_icon.svg');
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background-size: cover;
+}
+
+.number_icon {
+    background: url('../../Images/number_icon.svg') no-repeat;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    background-size: contain;
+}
+
+.whs_icon{
+    width: 75px;
+    height: 35px;
+    background: url('../../Images/whs.svg') no-repeat;
+    background-size: contain;
+    justify-self: end;
+    color: #e5f372;
+    margin: 0;
+}
+
+.links_container {
+    display: grid;
+    grid-template-columns: 30px 30px 2px;
+    grid-column-gap: 5px;
+    grid-template-rows: min-content;
+    align-self: end;
+    justify-self: end;
+}
+
+.links {
+    list-style: none;
+    display: grid;
+   /* grid-template-columns: 0.6fr 0.2fr 0.2fr;*/
+    grid-template-rows: 0.6fr 0.4fr;
+}
+
+.github_link {
+    background: url('../../Images/github_icon.svg') no-repeat;
+    align-self: flex-start;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+}
+
+.github_link:hover {
+    width: 30px;
+    height: 30px;
+    background: url('../../Images/github_icon_hover.svg') no-repeat;
+    background-size: contain;
+}
+
+.vk_link {
+    background: url('../../Images/vk_icon.svg') no-repeat;
+    align-self: flex-start;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+}
+
+.vk_link:hover {
+    background: url('../../Images/vk_icon_hover.svg');
+    background-size: contain;
+}
+
+@media screen and (max-width: 610px) {
+    .innerContainer {
+        grid-template-columns: auto;
+        justify-content: center;
+        grid-template-rows: 0.4fr 0.4fr 0.4fr;
+    }
+
+    .avatar {
+        justify-self: center;
+    }
+
+    .links {
+        justify-content: center;
+        grid-gap: 15px;
+    }
+
+    .whs_icon {
+        align-self: end;
+        grid-row: 2;
+    }
+}

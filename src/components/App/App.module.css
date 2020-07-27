@@ -1,11 +1,6 @@
-.wrap {
-    background-color: transparent;
-}
-
 .menuList {
     display: flex;
     justify-content: center;
-    margin-block-start: 1em;
     margin-block-end: 1em;
     padding-inline-start: 40px;
 }
@@ -16,4 +11,27 @@
     text-transform: uppercase;
     font-family: sans-serif;
     color: #ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(241, 254, 215, 0.33);
+    border-radius: 5px;
+    width: 123px;
+    height: 33px;
+}
+
+.activeAbout {
+    background: linear-gradient(179.99deg, #3ed56d 0.04%,
+    rgba(22, 157, 188, 0.87) 99.96%);
+    border-radius: 5px;
+}
+
+.activeTodo {
+    background: linear-gradient(179.99deg, #e64590 0.04%,
+    rgba(232, 227, 60, 0.95) 99.96%);
+    border-radius: 5px;
+}
+
+.link:hover {
+    color: #296497;
 }

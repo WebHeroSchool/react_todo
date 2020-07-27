@@ -4,23 +4,20 @@
 
 .checkboxLabel {
     cursor: pointer;
-    padding-left: 20px;
 }
 
-.checkboxLabel::before {
+.checkboxLabel {
     content: "";
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url('./ChekboxDone_A.svg');
-    transition: all 0.3 ease;
+    background: url('../../Images/ChekboxDone_A.svg');
     vertical-align: middle;
-    margin: 0 20px 10px -20px;
     transition: all .3s ease;
 }
 
-.checkboxInput[type="checkbox"]:checked + .checkboxLabel::before  {
+.checkboxInput[type="checkbox"]:checked + .checkboxLabel  {
     transition: all .3s ease;
-    background: url('./ChekboxDone_C.svg');
+    background: url('../../Images/ChekboxDone_C.svg');
 }
 

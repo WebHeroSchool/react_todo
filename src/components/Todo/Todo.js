@@ -1,74 +1,112 @@
-import React from 'react';
+import React, {useEffect, useLayoutEffect, useState} from 'react';
 import styles from './Todo.module.css';
-import Footer from '../Footer/Footer';
-import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
+import ItemListFilter from '../ItemListFilter/ItemListFilter';
 
-class Todo extends React.Component {
-    state = {
-        tasks: [
-            {
-                text: 'Сделать дизайн чекбоксов и InputItem',
-                isDone: true,
-                id: 1
-               
-            }
-        ],
-        count: 2
-    }
+export const DataContext = React.createContext();
 
-    onClickDone = id => {
-        const newItemList = this.state.tasks.map(item => {
+const Todo = () => {
+
+    const [count, setCount] = useState(2)
+    const [tasks, setTasks] = useState([
+        {
+            text: 'СДЕЛАТЬ ЧТО-ТО',
+            isDone: true,
+            id: 1,
+            editor: false
+
+        },
+        {
+            text: 'REACT',
+            isDone: true,
+            id: 2,
+            editor: false
+        }
+    ])
+
+    useEffect(() => {
+        localStorage.setItem('my-tasks', JSON.stringify(tasks))
+        localStorage.setItem('my-counts', JSON.stringify(count))
+        console.log('update')
+    }, [tasks, count])
+
+    useLayoutEffect(() => {
+        console.log('mount')
+        const data = localStorage.getItem('my-tasks')
+        const dataCount = localStorage.getItem('my-counts')
+        if (data) {
+            setTasks(JSON.parse(data))
+            setCount(JSON.parse(dataCount))
+        }
+
+    }, [])
+
+    const onClickDone = id => {
+        const newItemList = tasks.map(item => {
             const newItem = {...item};
             if (item.id === id) {
                 newItem.isDone = !item.isDone;
             }
             return newItem;
         });
-        this.setState({tasks: newItemList});
-    };
-
-    onClickDelete = id => {
-        const newItemList = this.state.tasks.filter(item => {
-            const newItem = {...item};
-            if (item.id === id) {
-                return newItem.id !== id;
-            }
-            return newItem;
-        });
-        this.setState({tasks: newItemList});
+        setTasks(newItemList)
     }
 
-    onClickAdd = text => this.setState(state => ({
-        tasks:[
-            ...state.tasks,
+    const enableEditor = id => {
+        const newItemList = tasks.map(item => {
+            const newItem = {...item};
+            if (item.id === id) {
+                newItem.editor = !item.editor;
+            }
+            return newItem
+        });
+        setTasks(newItemList)
+    }
 
+    const onClickDelete = id => {
+        setTasks(tasks.filter(item => item.id !== id))
+    }
+
+    const onClickChange = (id, text) => {
+        const newItemList = tasks.map(item => {
+            const newItem = {...item};
+            if (item.id === id) {
+                newItem.text = text
+            }
+            return newItem
+        });
+        setTasks(newItemList)
+    }
+
+    const onClickAdd = text => {
+        setTasks([
+            ...tasks,
             {
                 text,
                 isDone: false,
-                id: state.count + 1
+                id: count + 1,
+                editor: false
             }
-        ],
-        count: state.count + 1
-    }))
+        ])
+        setCount(count + 1)
+    }
 
-
-    render(){
-        let taksDone = this.state.tasks.filter(item => item.isDone === false );
-        let taksDoneLength = taksDone.length;
-
-        return (<div className={styles.main}>
+    const tasksText = tasks.map(item => item.text);
+    return (<div className={styles.main}>
             <div className={styles.container}>
-                <header className={styles.title}>Важные дела</header>
-                <InputItem onClickAdd={this.onClickAdd}/>
-                <ItemList task={this.state.tasks} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete}/>
-                <Footer count={taksDoneLength}/>
+                <header className={styles.title}>Список важных задач</header>
+                <InputItem onClickAdd={onClickAdd} tasksText={tasksText}/>
+                <DataContext.Provider value={{
+                    tasksText: tasksText,
+                    onClickDone: onClickDone,
+                    onClickChange: onClickChange,
+                    onClickDelete: onClickDelete,
+                    enableEditor: enableEditor}}>
+                    <ItemListFilter tasks={tasks}/>
+                </DataContext.Provider>
             </div>
         </div>
-        )
-    }
+    )
 }
-
-
 
 export default Todo;

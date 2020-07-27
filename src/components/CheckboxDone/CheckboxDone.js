@@ -1,27 +1,32 @@
 import React from 'react';
 import styles from './CheckboxDone.module.css';
+import PropTypes from 'prop-types';
+import {DataContext} from '../Todo/Todo';
 
-class CheckboxDone extends React.Component {
-    
-      render(){
-          const {checkedTask, onClickDone, taskId} = this.props;
+const CheckboxDone = ({checkedTask, taskId}) =>
+    (<div>
+        <DataContext.Consumer>
+            {({onClickDone}) => (
+                <div>
+                    <input
+                        className={styles.checkboxInput}
+                        type='checkbox'
+                        defaultChecked={checkedTask}
+                        onClick={() => onClickDone(taskId)}
+                        id={`done + ${taskId}`}
+                    />
+                    <label
+                        className={styles.checkboxLabel}
+                        htmlFor={`done + ${taskId}`}>
+                    </label>
+                </div>
+            )}
+        </DataContext.Consumer>
+    </div>);
 
-          return (<div>
-            <input
-                className={styles.checkboxInput}
-                type="checkbox"
-                defaultChecked={checkedTask}
-                onClick={() => onClickDone(taskId)}
-                id={taskId}
-            />
-            <label
-                className={styles.checkboxLabel}
-                htmlFor={taskId}>
-            </label>
-        </div>
-
-          )
-      }
-}
+CheckboxDone.propTypes = {
+    taskId: PropTypes.number.isRequired,
+    checkedTask: PropTypes.bool.isRequired
+};
 
 export default CheckboxDone;

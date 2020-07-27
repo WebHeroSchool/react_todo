@@ -1,0 +1,121 @@
+.listContainer {
+    border: double 3px transparent;
+    border-radius: 7px;
+    background-image: linear-gradient(#8464ffa8, #11422fd6),
+    linear-gradient(#36fc49c2 0%, #7592FA 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: inset 0 0 18px 0 rgba(247, 213, 255, 0.66);
+}
+
+.list {
+    font-size: 18px;
+    color: #cdfef0;
+    justify-self: start;
+    list-style: none;
+    overflow-y: hidden;
+    height: 300px;
+    padding-right: 25px;
+}
+
+.list:hover {
+    overflow-y: auto;
+}
+
+.list::-webkit-scrollbar {
+    width: 7px;
+    background: rgba(22, 157, 188, 0.87);
+}
+
+.list::-webkit-scrollbar-thumb {
+    background: #5af38a94;
+
+}
+
+.repos_ref {
+    text-decoration: none;
+}
+
+.item_container {
+    background: linear-gradient(180deg, #dcbcbc21 0%, #a87aaa4d 100%);
+    margin-bottom: 8px;
+    border-radius: 7px;
+    padding: 10px 10px 10px 10px;
+    cursor: default;
+    color: #afcac8;
+}
+
+.item_container:hover  {
+    background: linear-gradient(#223e9578 0%, #2bb3748f 100%);
+    color: #8ffbb0;
+    cursor: pointer;
+}
+
+.item_repos_info {
+    display: grid;
+    grid-template-columns: 100px 40px 40px 240px;
+}
+
+.JavaScript_icon {
+    display: inline-block;
+    background-color: #FCFF6B;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.CSS_icon {
+    display: inline-block;
+    background-color: #8312ff;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.HTML_icon {
+    display: inline-block;
+    background-color: #ff241c;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.language {
+    display: inline-block;
+    background-color: #fffce5;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.star_icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url('../../Images/star_icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.branch_icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url('../../Images/branch_icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 610px) {
+    .list {
+        padding-inline-start: 0;
+        padding-right: 5px;
+    }
+    .item_container {
+        padding: 5px;
+    }
+
+    .item_repos_info {
+        grid-template-columns: 0.6fr 0.3fr 0.3fr 0.4fr;
+    }
+}

@@ -5,21 +5,39 @@
 }
 
 .container {
-    display: table;
-    margin-top: 30px;
-    min-width: 500px;
-    min-height: 500px;
+    display: grid;
+    min-width: 600px;
+    height: max-content;
     background: linear-gradient(179.96deg, rgba(226, 123, 160, 0.83) 0.04%,
      rgba(105, 174, 170, 0.8) 0.05%, rgba(31, 103, 134, 0.8) 99.96%);
     border-radius: 5px;
 }
 
-.title {
-    margin-top: 20px;
-    color: white;
+.preloader {
+    background: url('../../Images/Spinner.svg');
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    justify-self: center;
+}
+
+.error {
     text-align: center;
-    font-family: sans-serif;
-    font-size: 36px;
-    line-height: 42px;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #296497;
+}
+
+.subtitle {
+    text-align: center;
+    color: #cdfef0;
+}
+
+@media screen and (max-width: 610px) {
+    .container {
+        min-width: auto;
+    }
+
+    .subtitle {
+        margin: 10px;
+    }
 }
