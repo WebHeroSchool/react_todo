@@ -9,29 +9,15 @@ const Todo = () => {
 
     const [count, setCount] = useState(2)
     const [tasks, setTasks] = useState([
-        {
-            text: 'СДЕЛАТЬ ЧТО-ТО',
-            isDone: true,
-            id: 1,
-            editor: false
-
-        },
-        {
-            text: 'REACT',
-            isDone: true,
-            id: 2,
-            editor: false
-        }
+        
     ])
 
     useEffect(() => {
         localStorage.setItem('my-tasks', JSON.stringify(tasks))
         localStorage.setItem('my-counts', JSON.stringify(count))
-        console.log('update')
     }, [tasks, count])
 
     useLayoutEffect(() => {
-        console.log('mount')
         const data = localStorage.getItem('my-tasks')
         const dataCount = localStorage.getItem('my-counts')
         if (data) {
