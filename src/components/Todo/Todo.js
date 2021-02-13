@@ -7,7 +7,7 @@ export const DataContext = React.createContext();
 
 const Todo = () => {
 
-    const [count, setCount] = useState(2)
+    const [count, setCount] = useState(0)
     const [tasks, setTasks] = useState([
         
     ])
